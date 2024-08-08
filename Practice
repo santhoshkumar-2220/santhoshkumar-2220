@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .slot {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin: 10px 0;
+            text-align: center;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .slot:hover {
+            background-color: #45a049;
+        }
+        .alert {
+            margin-top: 20px;
+            display: none;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .alert.error {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Slot Booking</h1>
+        <p>Please select a time slot that suits your schedule.</p>
+        <button class="slot" onclick="bookSlot('9:00 AM - 10:00 AM')">9:00 AM - 10:00 AM</button>
+        <button class="slot" onclick="bookSlot('10:00 AM - 11:00 AM')">10:00 AM - 11:00 AM</button>
+        <button class="slot" onclick="bookSlot('11:00 AM - 12:00 PM')">11:00 AM - 12:00 PM</button>
+        <button class="slot" onclick="bookSlot('12:00 PM - 1:00 PM')">12:00 PM - 1:00 PM</button>
+        <div id="alert" class="alert"></div>
+    </div>
+    <script>
+        function bookSlot(time) {
+            const alertBox = document.getElementById('alert');
+            alertBox.style.display = 'block';
+            alertBox.innerHTML = `You have successfully booked the slot: ${time}`;
+            alertBox.classList.remove('error');
+        }
+    </script>
+</body>
+</html>
